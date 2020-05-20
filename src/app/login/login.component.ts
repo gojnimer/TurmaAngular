@@ -1,5 +1,6 @@
 import { LoginService } from './login.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  constructor(private obj:LoginService) { }
+  constructor(private obj:LoginService, private rota:Router) { }
 
   ngOnInit(): void {
    
@@ -27,6 +28,10 @@ export class LoginComponent implements OnInit {
     this.obj.postLogin(this.user).subscribe(  
       obj => {
         console.log(obj);
+        this.rota.navigate(["home","casa","teste1","teste2"]);
+
+
+        
 
       },
       error => {

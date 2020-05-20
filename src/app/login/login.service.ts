@@ -19,10 +19,6 @@ export class LoginService {
    /*  var reqHeader = new HttpHeaders({ 
       'Content-Type': 'application/json'
    }); */
-
    return this.http.post("http://52.91.139.190/fsapi/users/login",user);
-   
-
-
   }
 }

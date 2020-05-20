@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { HomeModule } from './home/home.module';
 import { HomeComponent } from './home/home.component';
 import { LoginModule } from './login/login.module';
@@ -19,6 +20,7 @@ import { PrimeiroComponentComponent } from './primeiro-component/primeiro-compon
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     LoginModule,
     HomeModule,
     HttpClientModule
