@@ -26,9 +26,12 @@ export class LoginComponent implements OnInit {
   public enviar(){
    
     this.obj.postLogin(this.user).subscribe(  
-      obj => {
-        console.log(obj);
-        this.rota.navigate(["home","casa","teste1","teste2"]);
+      (obj:any) => {
+        console.log(obj.token);
+        /* let objJSON = JSON.parse(JSON.stringify(obj))
+        console.log(objJSON.token); */
+        localStorage.setItem("token",obj.token);
+        this.rota.navigate(["home"]);
 
 
         

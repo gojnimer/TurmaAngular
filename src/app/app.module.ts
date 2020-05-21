@@ -22,7 +22,6 @@ import { PrimeiroComponentComponent } from './primeiro-component/primeiro-compon
     AppRoutingModule,
     RouterModule,
     LoginModule,
-    HomeModule,
     HttpClientModule
     
   ],
