@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(private obj:LoginService, private rota:Router) { }
 
   ngOnInit(): void {
-   
+   localStorage.clear();
   }
 
 
@@ -30,10 +30,11 @@ export class LoginComponent implements OnInit {
         console.log(obj.token);
         /* let objJSON = JSON.parse(JSON.stringify(obj))
         console.log(objJSON.token); */
+        this.obj.user.next(obj);
         localStorage.setItem("token",obj.token);
         this.rota.navigate(["home"]);
 
-
+        /* {nome:obj.user.name,email:obj.user.email} */
         
 
       },

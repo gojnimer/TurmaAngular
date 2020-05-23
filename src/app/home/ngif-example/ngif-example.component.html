@@ -1,0 +1,19 @@
+<section style="border: 2px solid red; padding:20px; margin-top: 20px;">
+    <h4>NgIF Exemplo</h4>
+    <p>{{ condition }}</p>
+   
+
+    <p *ngIf="texto == 'verdadeiro' ? true : false">NG-IF FUNCIONANDO</p>
+
+    <p [hidden]="!condition">Visibility exemplo</p>
+
+    <p *ngIf="condition else loading">ELSE</p>
+
+    <button (click)="condition = !condition" >{{ condition ? 'esconder' : 'mostrar'}}</button>
+
+    <ng-template #loading>
+        <div>Loading...</div>
+    </ng-template>
+       
+       
+</section>

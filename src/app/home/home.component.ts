@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { LoginService } from './../login/login.service';
+import { Component, OnInit, Injector } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,28 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private rotaAtual:ActivatedRoute) { }
+  
+  usuario:any;
+  constructor(private rotaAtual: ActivatedRoute, private injector:Injector) { }
 
   ngOnInit(): void {
- /*    alert(this.rotaAtual.snapshot.params.idCasa); */
-    this.rotaAtual.params.subscribe(valor => {
+
+    let login = this.injector.get(LoginService);
+
+    login.user.subscribe(obj =>{
+      this.usuario = obj;
+      console.log(this.usuario);
+    } );
+
+
+   /*  console.log(this.login.user ? this.login.user : "nulo"); */
+
+    /*  this.rotaAtual.queryParams.subscribe(params => {
+       console.log(params.token);
+     }); */
+
+    /*    alert(this.rotaAtual.snapshot.params.idCasa); */
+    /* this.rotaAtual.params.subscribe(valor => {
       if(valor.idCasa){
         alert(valor.idCasa);
       }
@@ -25,6 +42,14 @@ export class HomeComponent implements OnInit {
       
 
     }  )
+     */
+  }
+
+
+
+
+  MostrarValor(event){
+    alert(event.nome);
   }
 
 }

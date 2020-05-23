@@ -1,2 +1,26 @@
-<p>home works!</p>
-<button [routerLink]="['/']">Teste</button>
+<!-- <p>{{usuario.user.name}}</p>
+ -->
+ <div style=" margin-bottom: 100px;">
+   
+    <app-ngif-example></app-ngif-example>
+
+    <app-ngfor-example></app-ngfor-example>
+    
+    <app-ngstyle-example></app-ngstyle-example>
+
+    <app-ngclass-example></app-ngclass-example>
+
+    <app-diretiva-custom-example (valor)="MostrarValor($event)" nome="teste nome input">
+       <div secundario>
+          <h4>secundario</h4>
+       </div>
+       <div principal>
+         <h4>teste</h4>
+       </div>
+       
+    </app-diretiva-custom-example>
+
+
+    <app-pipe-exemplo></app-pipe-exemplo>
+
+ </div>

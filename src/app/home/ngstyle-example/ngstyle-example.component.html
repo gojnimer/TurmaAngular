@@ -1,0 +1,35 @@
+<section style="border: 2px solid red; padding:20px; margin-top: 20px;">
+    <h4>NgStyle Exemplo</h4>
+
+    <h5>Styles com property binding (style binding)</h5>
+
+    <button
+     [style.background-color]="ativo ? 'blue' : 'gray'"
+     [style.color]="ativo ? 'white' : 'black'"
+     [style.fontWeight]="ativo ? 'bold' : 'normal'"
+     [style.fontSize]="tamanhoFonte + 'px'"
+     (click)="ativo = !ativo">
+        Mudar Atributo 'ativo'
+    </button>
+
+
+    <input type="text" [(ngModel)]="tamanhoFonte">
+
+
+    <h5>Styles com ngStyle</h5>
+
+    <button [ngStyle]="
+    {
+    'background-color': (retornaFalse(true) ? 'blue' : 'gray'),
+     'color': (retornaFalse() ? 'white' : 'black'),
+     'fontWeight': (ativo ? 'bold' : 'normal'),
+     'fontSize': (tamanhoFonte + 'px')
+        }" 
+    (click)="ativo = !ativo">
+     Mudar Atributo 'ativo' 
+    </button>
+       
+           
+
+
+</section>

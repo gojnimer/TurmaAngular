@@ -1,0 +1,40 @@
+<section style="border: 2px solid red; padding:20px; margin-top: 20px;">
+    <!-- <h4 fundoAmarelo >Diretiva Custom Exemplo</h4>
+    <p fundoAmarelo> Teste</p> -->
+    <h4>{{ nome }}</h4>
+    
+    <input inputDiretiva type="text" style="display: block; margin-bottom: 20px;">
+
+
+
+    <input type="number"
+     maxlength="4"
+     
+     [(ngModel)]="numeroDeHoras"
+ 
+     limitarNumero
+     [latestInputValue]="numeroDeHoras" 
+     [minimo]="-999" 
+     [maximo]="999" 
+     required 
+     >
+     
+
+
+     <p>{{valorFinal}}</p>
+     <input type="text" decimalMask="999.999.999,99" [(ngModel)]="qtdeProgramadaString"
+        name="qtdeProgramada" maxlength="18" (decimalChange)="mudaValorQtdProgramada($event)" >
+     
+
+     <button (click)="btnClick()" style="display: block;
+     margin-top: 20px;">Emitir Evento</button>
+
+
+     <ng-content select="[principal]">
+
+     </ng-content>
+     <ng-content select="[secundario]">
+
+    </ng-content>
+    
+</section>

@@ -9,12 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrimeiroComponentComponent } from './primeiro-component/primeiro-component.component';
 
+
 @NgModule({
   declarations: [
 
     AppComponent,
     PrimeiroComponentComponent
-   
+
     
   ],
   imports: [
