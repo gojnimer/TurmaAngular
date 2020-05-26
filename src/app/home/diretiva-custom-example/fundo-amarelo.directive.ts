@@ -9,7 +9,7 @@ import { Directive, ElementRef, HostListener, Renderer2, Injector } from '@angul
 
 export class FundoAmareloDirective {
 
-  color:string = "yellow"
+  color:string = "yellow";
 
  /*  @HostListener('mouseenter') onMouseEnter() {
     this.mudarCor("blue");

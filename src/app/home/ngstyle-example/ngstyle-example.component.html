@@ -20,11 +20,11 @@
 
     <button [ngStyle]="
     {
-    'background-color': (retornaFalse(true) ? 'blue' : 'gray'),
+     'background-color': (retornaFalse(true) ? 'blue' : 'gray'),
      'color': (retornaFalse() ? 'white' : 'black'),
      'fontWeight': (ativo ? 'bold' : 'normal'),
      'fontSize': (tamanhoFonte + 'px')
-        }" 
+    }" 
     (click)="ativo = !ativo">
      Mudar Atributo 'ativo' 
     </button>

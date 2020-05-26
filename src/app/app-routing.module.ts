@@ -1,3 +1,4 @@
+import { ViewChildExampleComponent } from './view-child-example/view-child-example.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -13,7 +14,8 @@ const routes: Routes = [
 
   {path:"login", component: LoginComponent},
   
-  {path:"home" , loadChildren: () => import('./home/home.module').then(m => m.HomeModule)}
+  {path:"home" , loadChildren: () => import('./home/home.module').then(m => m.HomeModule)},
+  {path:"current", component:ViewChildExampleComponent}
   
   /* {path:"home" , canActivate:[AuthGuard]} */
 

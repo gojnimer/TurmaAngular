@@ -1,7 +1,32 @@
-
+<!-- 
 <h4>Login</h4>
 <input type="text" [(ngModel)]="user.email" placeholder="usuário"  style="width: 300px; display: block;">
 <input type="text" [(ngModel)]="user.password" placeholder="senha"  style="width: 300px; display: block;">
 <button (click)="enviar()" style="width: 300px; display: block;">Enviar</button>
 
 
+ -->
+  <div *ngIf="this.loginForm.hasError && this.loginForm.touched">
+    <div *ngFor="let error of errorList" >
+      <div class="alert alert-danger m-3">
+        {{error}}
+    </div>
+    </div>
+  </div>
+
+ <div class="wrapper">
+    <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">       
+      <h2 class="form-signin-heading">Login</h2>
+
+
+
+
+
+      <input type="text" (mouseleave)="this.Validate(this.loginForm)" formControlName="email" class="form-control" name="username" placeholder="Email"  />
+
+
+      <input type="password" (mouseleave)="this.Validate(this.loginForm)" formControlName="senha" class="form-control" name="password" placeholder="Senha" />      
+     
+      <button type="submit" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+    </form>
+  </div>
