@@ -18,4 +18,4 @@ content-type: application/json
 
 
 ###
-http://localhost:4300/usuario?email=admin@gmail.com
+http://localhost:4300/usuario?email=admin@gmail.com&senha=123456
