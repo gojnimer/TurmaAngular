@@ -1,0 +1,81 @@
+<div *ngFor="let curso of cursos">
+    <div class="card mt-3">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-2">
+                    <button type="button" (click)="deletar(curso.id)" class="btn mt-3 btn-danger btn-sm btn-block" >Deletar</button>
+                </div>
+                <div class="col-2">
+                    <button type="button" (click)="alterarcurso(curso)" class="btn mt-3 btn-warning btn-sm btn-block" data-toggle="modal" data-target="#alterarModal">Alterar</button>
+                </div>
+                <div class="col-8">
+                    {{curso.nome}}  
+                </div>
+            </div>
+           
+        </div>
+      </div>
+</div>
+
+<button type="button"  class="btn mt-3 btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Adicionar curso</button>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form [formGroup]="cursoForm" (ngSubmit)="onSubmit()">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Adicionar Curso</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+                <div class="form-group">
+                  <label >Nome do curso</label>
+                  <input type="text" class="form-control" formControlName="nome" aria-describedby="emailHelp">
+                 
+                </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="submit" class="btn btn-primary" >Adicionar</button>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="alterarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form [formGroup]="cursoAlterarForm" (ngSubmit)="AlterarValor()">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Adicionar Curso</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+                <div class="form-group">
+                  <label >Nome do curso</label>
+                  <input type="text" class="form-control" formControlName="nome" aria-describedby="emailHelp">
+                 
+                </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="submit" class="btn btn-primary" >Adicionar</button>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>

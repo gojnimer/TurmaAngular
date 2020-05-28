@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { UsuarioService } from './login/usuario.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 
 
-export class AppComponent {
-  title = 'hello-world';
+export class AppComponent implements OnInit {
+  constructor(private usuario:UsuarioService){}
+  canShow:boolean = false;
+  
+
+  ngOnInit(){
+    
+    this.usuario.user.subscribe(value => this.canShow = value);
+  }
+  
 }

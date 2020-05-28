@@ -1,3 +1,4 @@
+import { UsuarioService } from './usuario.service';
 import { RouterModule } from '@angular/router';
 import { LoginService } from './login.service';
 import { NgModule } from '@angular/core';
@@ -23,6 +24,6 @@ import { HttpClientModule } from '@angular/common/http';
   ],
 
   
-  providers:[LoginService]
+  providers:[LoginService,UsuarioService]
 })
 export class LoginModule { }

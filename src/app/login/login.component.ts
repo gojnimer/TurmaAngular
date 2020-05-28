@@ -1,3 +1,4 @@
+import { UsuarioService } from './usuario.service';
 import { LoginService } from './login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -18,16 +19,45 @@ export class LoginComponent implements OnInit {
 
   errorList: any = [];
 
-  constructor(private LoginAuth:LoginService, private routing:Router, private fb:FormBuilder){}
+  constructor(private LoginAuth:LoginService, private routing:Router, private fb:FormBuilder, private userController:UsuarioService){}
 
   ngOnInit(){
-    
+    console.log(this.loginForm);
   }
 
   onSubmit(){
-    
-    this.Validate(this.loginForm);
+    console.log(this.loginForm.value);
+    console.log(this.loginForm.valid);
+    if(!this.loginForm.valid){
+      this.loginForm.controls.email.markAsTouched();
+      this.loginForm.controls.senha.markAsTouched();
+      return;
+    }
+
+    this.userController.checkLogin(this.loginForm.value).subscribe(
+     (obj:any) => {  
+       
+       if(obj.length >= 1){
+            localStorage.setItem('token',"autenticado");
+            this.userController.user.next(true);
+            this.routing.navigate(['']);
+       }
+
+
+     },
+     error => {
+      console.log(error);
+     }
+    ).add(() =>{ console.log("requisição completa");});
+
+
+
+
+    /* this.Validate(this.loginForm); */
   }
+
+
+
 
 
   Validate(form: FormGroup) {

@@ -1,0 +1,21 @@
+http://localhost:4300/usuario
+
+
+###
+
+POST http://localhost:4300/usuario HTTP/1.1
+content-type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "senha": "123456",
+    "user": 
+    {
+     "nome": "Admin Teste",
+     "nivelDeAcesso": 1
+    }
+}
+
+
+###
+http://localhost:4300/usuario?email=admin@gmail.com

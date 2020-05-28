@@ -1,3 +1,4 @@
+import { GetCursosComponent } from './get-cursos/get-cursos.component';
 import { CnpjExemploPipe } from './pipe-exemplo/pipes/cnpj-exemplo.pipe';
 import { DataExemploPipe } from './pipe-exemplo/pipes/data-exemplo.pipe';
 
@@ -11,13 +12,14 @@ import { HomeComponent } from './home.component';
 
 import { FundoAmareloDirective } from '../home/diretiva-custom-example/fundo-amarelo.directive';
 import { NgclassExampleComponent } from './ngclass-example/ngclass-example.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgforExampleComponent } from './ngfor-example/ngfor-example.component';
 import { NgifExampleComponent } from './../home/ngif-example/ngif-example.component';
 import { HomeRoutingModule } from './home.routing.module';
 import { NgstyleExampleComponent } from './ngstyle-example/ngstyle-example.component';
 import { DiretivaCustomExampleComponent } from '../home/diretiva-custom-example/diretiva-custom-example.component';
 import { LimitarNumeroDirective } from './diretiva-custom-example/limitar-numero.directive';
+import { GetCursosService } from './get-cursos.service';
 
 
 
@@ -36,15 +38,21 @@ import { LimitarNumeroDirective } from './diretiva-custom-example/limitar-numero
     DecimalMaskDirective,
     PipeExemploComponent,
     DataExemploPipe,
-    CnpjExemploPipe
+    CnpjExemploPipe,
+
+    GetCursosComponent
 
   ],
   imports: [
     CommonModule,
     RouterModule,
     HomeRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  exports: [HomeComponent]
+
+  exports: [HomeComponent],
+
+  providers:[GetCursosService]
 })
 export class HomeModule { }
