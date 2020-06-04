@@ -32,21 +32,19 @@
        
       </div>     
       <div class="form-row">
-        <div class="col-md-12 mb-3">
+        <div class="col-md-12 ">
           <label>Senha</label>
-          <input type="password" formControlName="senha" class="form-control is-invalid" [class.is-invalid]="!this.loginForm.controls.senha.valid && this.loginForm.controls.senha.touched" >
-          <div class="invalid-feedback"  [hidden]="!this.loginForm.controls.senha.errors?.minLength && this.loginForm.controls.senha.touched" >
-            O valor precisa ter no minimo 5 dígitos
+          <input type="password" formControlName="senha" class="form-control " [class.is-invalid]="!this.loginForm.controls.senha.valid && this.loginForm.controls.senha.touched" >
+          <div class="invalid-feedback" *ngIf="this.loginForm.controls.senha.errors && this.loginForm.controls.senha.touched" >
+            {{ this.loginForm.controls.senha.errors?.required ? "O campo não pode ser nulo." : "O valor precisa ter no minimo 5 dígitos" }}
           </div>
-          <div class="invalid-feedback" [hidden]="!this.loginForm.controls.senha.errors?.required && this.loginForm.controls.senha.touched  " >
-            O campo não pode ser nulo.
-          </div>
+          
         </div>
        
       </div>   
       
     
      
-      <button type="submit" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+      <button type="submit" class="btn btn-lg btn-primary btn-block mt-5" type="submit">Login</button>   
     </form>
   </div>

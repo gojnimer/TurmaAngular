@@ -1,21 +1,25 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { tap, delay, take } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class LoginService implements OnInit{
 
   constructor(private http: HttpClient) { }
   
   user:BehaviorSubject<any> = new BehaviorSubject({});
- 
+  
+  
   public teste() {
     return 3;
   }
 
+  ngOnInit(){
+    this.http.options
+  }
 
   public postLogin(user: any) {
     /*  var reqHeader = new HttpHeaders({ 

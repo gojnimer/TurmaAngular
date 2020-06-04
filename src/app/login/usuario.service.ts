@@ -14,7 +14,7 @@ export class UsuarioService {
   user:BehaviorSubject<any> = new BehaviorSubject(false);
 
   checkLogin(user){
-    return this.http.get("http://localhost:4300/usuario?email=" + user.email + "&senha=" + user.senha);
+    return this.http.get("usuario?email=" + user.email + "&senha=" + user.senha);
 
   }
 

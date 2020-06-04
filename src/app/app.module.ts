@@ -1,3 +1,4 @@
+import { Interceptor } from './guards/interceptor.module';
 import { FundoAmareloDirective } from './home/diretiva-custom-example/fundo-amarelo.directive';
 import { RouterModule } from '@angular/router';
 import { HomeModule } from './home/home.module';
@@ -26,7 +27,8 @@ import { ViewChildExampleComponent } from './view-child-example/view-child-examp
     AppRoutingModule,
     RouterModule,
     LoginModule,
-    HttpClientModule
+    HttpClientModule,
+    Interceptor
     
   ],
   exports: [],
